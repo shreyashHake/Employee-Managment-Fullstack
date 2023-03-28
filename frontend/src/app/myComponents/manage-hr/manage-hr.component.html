@@ -1,0 +1,98 @@
+<div class="emp">
+  <mat-card class="card" style="width: 50%">
+    <mat-card-header class="header">
+      <mat-card-title> Add Hr </mat-card-title>
+    </mat-card-header>
+    <br />
+    <mat-card-content class="content">
+      <form #userForm="ngForm" [formGroup]="formGroup" (ngSubmit)="onPost()">
+        <input type="hidden" formControlName="hrId" />
+        <p>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              formControlName="hrName"
+              [errorStateMatcher]="errorMatcher"
+            />
+            <mat-error *ngIf="formControl['hrName'].errors?.['required']">
+              Name is required
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              formControlName="hrEmail"
+              [errorStateMatcher]="errorMatcher"
+              placeholder="example@domain.com"
+            />
+            <mat-error *ngIf="formControl['hrEmail'].errors?.['required']">
+              Email is required
+            </mat-error>
+
+            <mat-error *ngIf="formControl['hrEmail'].errors?.['email']">
+              Invalid email id
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              formControlName="hrAddress"
+              [errorStateMatcher]="errorMatcher"
+            />
+            <mat-error *ngIf="formControl['hrAddress'].errors?.['required']">
+              Name is required
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field >
+            <mat-label>Phone</mat-label>
+            <input
+              matInput
+              formControlName="hrPhone"
+              [errorStateMatcher]="errorMatcher"
+            />
+            <mat-error *ngIf="formControl['hrPhone'].errors?.['required']">
+              Name is required
+            </mat-error>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field >
+            <mat-label>Salary</mat-label>
+            <input
+              matInput
+              formControlName="hrSalary"
+              [errorStateMatcher]="errorMatcher"
+            />
+            <mat-error *ngIf="formControl['hrSalary'].errors?.['required']">
+              Name is required
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="formGroup.invalid"
+          >
+            Add
+          </button>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

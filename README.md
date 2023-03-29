@@ -23,15 +23,4 @@ Open Fronend in Vs-Code and follow below steps to run frontend
 # Backend Setup
 Download `postgress` for setup
 Create a table name `employeeManagement' in the `pgAdmin`
-
-spring.application.name=EmployeeManagement
-server.port=8085
-
-spring.datasource.url=jdbc:postgresql://localhost:5432/employeeManagement
-spring.datasource.username=postgres
-spring.datasource.password=postgres
-
-spring.datasource.driver-class-name=org.postgresql.Driver
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.ddl-auto=update
+Run backend in any IDE
